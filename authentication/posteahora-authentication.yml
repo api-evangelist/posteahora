@@ -1,0 +1,24 @@
+generated: '2026-09-27'
+method: searched
+generator: extract-docs-artifacts.py (local)
+source: https://posteahora.com/docs/authentication
+sources:
+- https://posteahora.com/docs/authentication
+- https://posteahora.com/docs/quickstart
+description: Every request is authenticated with a PosteAhora API key, scoped to exactly what the integration needs.
+schemes:
+- type: apiKey
+  name: API Key
+  evidence: Every request is authenticated with a PosteAhora API key, scoped to exactly what the integration needs.
+  location: header
+  header: Authorization
+  scopes:
+  - ideas:read
+  - ideas:write
+  - posts:read
+  - posts:write
+  - analytics:read
+  - accounts:read
+  - media:write
+  how_to_obtain: Create keys in the app under API; a key is shown once — store it like a password.
+docs: https://posteahora.com/docs/authentication

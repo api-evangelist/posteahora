@@ -1,23 +1,113 @@
 aid: posteahora
 name: PosteAhora
-description: 'PosteAhora is a company surfaced via the API Evangelist harvest backlog (source: new-submission)
-  and added to the network as a stub for full-pipeline profiling.'
+image: https://posteahora.com/og-image.png
+description: PosteAhora provides an AI‑driven social media automation platform that lets creators and businesses schedule, cross‑post, and analyze
+  content across multiple networks via a single dashboard. It offers an MCP (Model Context Protocol) server enabling Claude, ChatGPT, Perplexity,
+  Cursor and other AI agents to plan, write, schedule and publish posts automatically. Plans start at $24/month for up to 5 channels, with unlimited
+  posts and API/MCP access.
 url: https://raw.githubusercontent.com/api-evangelist/posteahora/refs/heads/main/apis.yml
 x-type: company
 x-source: harvest:new-submission
-x-tier: stub
-x-tier-reason: harvest
+x-tier: profiled
+x-tier-reason: enrichment pass 2026-09-27 (modular-v1; was harvest)
 specificationVersion: '0.20'
 created: '2026-09-27'
 modified: '2026-09-27'
 tags:
 - Company
-apis: []
+- Social Media
+- AI Automation
+- Marketing
+- SaaS
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: Spectral
+  url: rules/posteahora-rules.yml
+- type: JSONLD
+  url: json-ld/posteahora-context.jsonld
+- type: Vocabulary
+  url: vocabulary/posteahora-vocabulary.yml
+- type: Plans
+  url: plans/posteahora-plans-pricing.yml
+- type: DataModel
+  url: data-model/posteahora-data-model.yml
+- type: ChangeLog
+  url: changelog/posteahora-changelog.yml
+- type: Authentication
+  url: authentication/posteahora-authentication.yml
+- type: ErrorCatalog
+  url: errors/posteahora-problem-types.yml
+- type: Conformance
+  url: conformance/posteahora-conformance.yml
+- type: LLMsTxt
+  url: llms/posteahora-llms.txt
+- type: Hosts
+  url: hosts/posteahora-hosts.yml
+- type: Vendors
+  url: vendors/posteahora-vendors.yml
+- type: SDKs
+  url: packages/posteahora-packages.yml
+- type: Packages
+  url: packages/posteahora-packages.yml
+- type: GettingStarted
+  url: https://posteahora.com/docs/quickstart
+- type: GitHubOrganization
+  url: https://github.com/posteahora
+- type: DomainSecurity
+  url: security/posteahora-domain-security.yml
 - type: Website
   url: https://posteahora.com/
+- type: Documentation
+  url: https://posteahora.com/docs
+- type: APIReference
+  url: https://posteahora.com/docs/api
+- type: Blog
+  url: https://posteahora.com/blog
+- type: Pricing
+  url: https://posteahora.com/pricing
+- type: TermsOfService
+  url: https://posteahora.com/terms
+- type: PrivacyPolicy
+  url: https://posteahora.com/privacy
+- type: Roadmap
+  url: https://posteahora.com/roadmap
+- type: Changelog
+  url: https://posteahora.com/changelog
+apis:
+- name: PosteAhora API
+  description: Key-authenticated REST gateway over the same publishing pipeline as the PosteAhora web app.
+  humanURL: https://posteahora.com/docs/api
+  baseURL: https://api.posteahora.com/functions/v1/api
+  aid: posteahora:posteahora-api
+- aid: posteahora:posteahora-public-api-api
+  name: PosteAhora Public API API
+  description: 'Key-authenticated REST gateway over the same publishing pipeline as the PosteAhora web app. It powers the MCP server, the CLI,
+
+    the n8n node, and any third-party integration. This is the frozen **v1** contract: additive changes only.'
+  humanURL: https://posteahora.com/docs/api
+  baseURL: https://api.posteahora.com/functions/v1/api
+  properties:
+  - type: OpenAPI
+    url: openapi/_original/posteahora-api-openapi.yml
+  - type: JSONSchema
+    url: json-schema/posteahora-create-post-request-schema.json
+  - type: JSONSchema
+    url: json-schema/posteahora-analytics-result-schema.json
+  - type: JSONSchema
+    url: json-schema/posteahora-post-schema.json
+  - type: JSONSchema
+    url: json-schema/posteahora-update-post-request-schema.json
+  - type: JSONSchema
+    url: json-schema/posteahora-account-schema.json
+  - type: JSONSchema
+    url: json-schema/posteahora-idea-input-schema.json
+x-enrichment:
+  date: '2026-09-27'
+  status: enriched
+  artifacts_added: 15
+  pass: modular-v1
+  engine: identity=local,contract=local,surfaces=local,docs=local,regulatory=local

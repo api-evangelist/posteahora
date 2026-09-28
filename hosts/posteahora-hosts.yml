@@ -1,0 +1,65 @@
+generated: '2026-09-28'
+method: derived
+source: the pre-flight dossier, apis.yml pointers, spec servers, well-known, vendors -- nothing fetched here
+generator: derive-hosts.py
+summary:
+  hosts: 3
+  own: 2
+  other_domain: 0
+  platform: 1
+  roles:
+  - api
+  - source
+  - website
+hosts:
+- host: api.posteahora.com
+  found_by:
+  - apis[]
+  - contract-discovery
+  - vendor-detect
+  types: []
+  serves:
+  - api
+  - cdn
+  vendor: cloudflare
+  registrable_domain: posteahora.com
+  role: api
+  relation: own
+- host: github.com
+  found_by:
+  - pointer
+  types:
+  - GitHubOrganization
+  serves: []
+  registrable_domain: github.com
+  role: source
+  relation: platform
+- host: posteahora.com
+  found_by:
+  - pointer
+  - apis[]
+  - probed
+  - docs-index
+  - spec-found
+  - contract-discovery
+  - well-known
+  - vendor-detect
+  types:
+  - GettingStarted
+  - Website
+  - Documentation
+  - APIReference
+  - Blog
+  - Pricing
+  - TermsOfService
+  - PrivacyPolicy
+  - Roadmap
+  - Changelog
+  serves:
+  - docs
+  - spec
+  - hosting
+  vendor: vercel
+  registrable_domain: posteahora.com
+  role: website
+  relation: own

@@ -1,0 +1,8 @@
+generated: '2026-09-27'
+method: probed
+generator: harvest-sibling-contracts.py --bootstrap
+source: https://posteahora.com/openapi.yaml
+operations: 15
+version: 3.1.0
+ownership: the contract module fetched this URL and reported it saved with ownership
+  verified; its write was empty, so the closeout saved it

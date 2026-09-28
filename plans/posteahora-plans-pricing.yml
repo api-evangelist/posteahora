@@ -1,0 +1,29 @@
+generated: '2026-09-27'
+method: searched
+generator: extract-docs-artifacts.py (local)
+source: https://posteahora.com/pricing
+sources:
+- https://posteahora.com/pricing
+- https://posteahora.com/docs/platform/plans
+- https://posteahora.com/blog/claude-skill-replaces-higgsfield-subscription
+name: PosteAhora pricing
+audience: business-product
+pricing_basis: per-seat
+plans:
+- name: Standard
+  price_text: $24 /mo
+  price: 24
+  billing_period: monthly
+- name: Team
+  price_text: $34 /mo
+  price: 34
+  billing_period: monthly
+- name: Scale
+  price_text: $44 /mo
+  price: 44
+  billing_period: monthly
+- name: Agency
+  price_text: $89 /mo
+  price: 89
+  billing_period: monthly
+docs: https://posteahora.com/pricing

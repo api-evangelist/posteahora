@@ -1,0 +1,133 @@
+# PosteAhora
+
+> Connect Claude, ChatGPT or any MCP agent to plan, write, schedule and publish across every social network — or run it all yourself from one calendar.
+
+PosteAhora also exposes an MCP (Model Context Protocol) server, so AI agents
+such as Claude, ChatGPT, Cursor and Perplexity can plan, write, schedule and
+publish social content on a user behalf through a single connector URL.
+
+This file is generated at build time from the pages listed below, so it always
+matches what the site actually serves.
+
+Exact plan prices and limits, in plain text: https://posteahora.com/pricing.md — generated
+from the same table the checkout reads, so it cannot quote a stale price.
+
+## Main pages
+
+- [PosteAhora — Social media on autopilot with AI agents](https://posteahora.com/): Connect Claude, ChatGPT or any MCP agent to plan, write, schedule and publish across every social network — or run it all yourself from one calendar.
+- [Social Media MCP Server for Claude, ChatGPT & Cursor](https://posteahora.com/mcp): Connect Claude, ChatGPT, Cursor or any AI agent to Instagram, TikTok, LinkedIn, X and more. One MCP server that writes, schedules and publishes your posts.
+- [Pricing — PosteAhora | Schedule & publish to 14 networks](https://posteahora.com/pricing): Flat pricing by channel count for scheduling and publishing across Instagram, TikTok, YouTube, X, LinkedIn and 9 more networks. Compare Standard, Team, Scale and Agency feature by feature.
+
+## AI agents & integrations
+
+- [Post to Social Media from Claude — Instagram, X, LinkedIn via MCP](https://posteahora.com/mcp/claude): Connect Claude to PosteAhora as a custom connector and schedule posts to Instagram, TikTok, X, LinkedIn and ten more networks from a chat — web, desktop and Claude Code. Setup in four steps, 7-day free trial.
+- [Post to Social Media from ChatGPT — Instagram, X, LinkedIn via MCP](https://posteahora.com/mcp/chatgpt): Connect ChatGPT to PosteAhora through MCP and schedule posts to Instagram, TikTok, X, LinkedIn and ten more networks from a chat. Setup in four steps, 7-day free trial.
+- [Post to Social Media from Perplexity — Instagram, X, LinkedIn via MCP](https://posteahora.com/mcp/perplexity): Connect Perplexity to PosteAhora as a custom connector: research a topic and schedule the post to Instagram, TikTok, X, LinkedIn and ten more networks from the same thread. Setup in four steps, 7-day free trial.
+- [Automate Social Media with Orbit](https://posteahora.com/mcp/orbit): Connect Orbit to PosteAhora with an API key and let its agents create, schedule and publish across every network. 7-day free trial.
+- [Post to Social Media from Notion AI](https://posteahora.com/mcp/notion): Connect a Notion agent to PosteAhora to draft, schedule and publish posts across every network from your workspace. 7-day free trial.
+- [Post to Social Media with Manus](https://posteahora.com/mcp/manus): Connect Manus to PosteAhora to draft, schedule and publish across every network in plain language. One connector URL, no API key. 7-day free trial.
+- [Post to Social Media with OpenClaw](https://posteahora.com/mcp/openclaw): Add PosteAhora to your self-hosted OpenClaw gateway to create, schedule and publish across every network. 7-day free trial.
+- [Post to Social Media from Cursor — Instagram, X, LinkedIn via MCP](https://posteahora.com/mcp/cursor): Add PosteAhora to Cursor in one click, sign in once, and Cursor's agent can turn what you shipped into posts for Instagram, X, LinkedIn and eleven more networks — in the editor or the Cursor CLI.
+- [Post to Social Media from Windsurf](https://posteahora.com/mcp/windsurf): Connect Windsurf's Cascade to PosteAhora to draft, schedule and publish across every network without leaving your editor. 7-day free trial.
+- [Post to Social Media from Antigravity — Instagram, X, LinkedIn via MCP](https://posteahora.com/mcp/antigravity): Add PosteAhora to Google Antigravity with one serverUrl and sign in once. Its agents can schedule posts to Instagram, X, LinkedIn and eleven more networks from the IDE, the app or the CLI.
+- [Post to Social Media from Codex — Instagram, X, LinkedIn via MCP](https://posteahora.com/mcp/codex): Add PosteAhora to OpenAI's Codex with one command and sign in once. The CLI, the Codex app and the IDE extension can then schedule posts to Instagram, X, LinkedIn and eleven more networks.
+- [Automate Social Media with n8n](https://posteahora.com/mcp/n8n): Connect n8n to PosteAhora to trigger posts on any event and build hands-off publishing pipelines across every network. 7-day free trial.
+- [Automate Social Media with Make](https://posteahora.com/mcp/make): Connect Make to PosteAhora and build no-code scenarios that draft, schedule and publish across every network automatically. 7-day free trial.
+- [Automate Social Media with Zapier](https://posteahora.com/mcp/zapier): Connect Zapier to PosteAhora and turn any trigger into a scheduled post across Instagram, X, LinkedIn, Threads, Facebook and more — no code. 7-day free trial.
+- [Post to Social Media from Raycast](https://posteahora.com/mcp/raycast): Connect Raycast to PosteAhora and draft, schedule and publish posts across every network from your command bar. Setup takes 2 minutes. 7-day free trial.
+
+## Supported social networks
+
+- [Instagram Scheduler: Posts, Reels, Carousels & Stories](https://posteahora.com/instagram): Schedule Instagram posts, Reels, carousels and Stories that publish automatically through the official API. No Facebook Page needed. Specs, steps and FAQ.
+- [TikTok Scheduler: Schedule Videos & Photo Posts](https://posteahora.com/tiktok): Schedule TikTok videos and photo posts that publish automatically through TikTok's official API, or land in your inbox as drafts. Limits, steps and FAQ.
+- [YouTube Scheduler: Schedule Videos & Shorts](https://posteahora.com/youtube): Schedule YouTube videos and Shorts that publish automatically through YouTube's official API, with title, visibility and audience set. Limits, steps and FAQ.
+- [X (Twitter) Scheduler: Schedule Posts, Photos & Polls](https://posteahora.com/x): Schedule X posts, photos, videos and polls that publish automatically through X's official API, counted the way X counts. Limits, plans, steps and FAQ.
+- [LinkedIn Scheduler: Schedule Profile Posts](https://posteahora.com/linkedin): Schedule LinkedIn posts with photos or video that publish automatically to your profile through LinkedIn's official API. Limits, steps and FAQ.
+- [Threads Scheduler: Schedule Posts & Carousels](https://posteahora.com/threads): Schedule Threads posts, carousels and videos that publish automatically through Meta's official Threads API, with reply controls and topics. Steps and FAQ.
+- [Facebook Scheduler: Page Posts, Photos, Videos & Reels](https://posteahora.com/facebook): Schedule Facebook Page posts, photo albums, videos and Reels that publish automatically through Meta's official API. Limits, steps and FAQ.
+- [Bluesky Scheduler: Schedule Posts & Photos](https://posteahora.com/bluesky): Schedule Bluesky posts with up to 4 photos that publish automatically, with clickable links, hashtags and mentions. Connects with an App Password.
+- [Discord Scheduler: Schedule Server Messages](https://posteahora.com/discord): Schedule Discord messages with images and video to any channel in your server, through our bot or a channel webhook. Limits, steps and FAQ.
+- [Telegram Scheduler: Schedule Channel Posts](https://posteahora.com/telegram): Schedule Telegram channel posts, photos and albums through your own bot. Text up to 4,096 characters, captions up to 1,024. Steps and FAQ.
+- [Mastodon Scheduler: Schedule Posts on Any Server](https://posteahora.com/mastodon): Schedule Mastodon posts with photos or video on any server, counted against your own server's character limit. Limits, steps and FAQ.
+- [WordPress Scheduler: Schedule Blog Posts](https://posteahora.com/wordpress): Schedule WordPress posts with a title, featured image, status, categories and tags, on WordPress.com or your own site, next to your social posts. Steps and FAQ.
+- [DEV (dev.to) Scheduler: Schedule Articles](https://posteahora.com/devto): Schedule DEV Community articles in Markdown with a cover image, tags, series and canonical URL, next to your social posts. Steps and FAQ.
+- [Tumblr Scheduler: Schedule Posts & Photos](https://posteahora.com/tumblr): Schedule Tumblr posts with a title, text, up to 10 photos and tags: publish at your time, save a draft or add to your Tumblr queue. Steps and FAQ.
+
+## Comparisons
+
+- [Compare social media schedulers: PosteAhora vs the rest](https://posteahora.com/compare): Honest side-by-side comparisons of PosteAhora against Buffer, Hootsuite, Metricool, Later, Sprout Social, SocialBee and Publer — with real, dated prices.
+- [PosteAhora vs Buffer: Best Buffer Alternative in 2026](https://posteahora.com/compare/posteahora-vs-buffer): An honest Buffer alternative comparison: PosteAhora posts to 14 networks at $24/mo for 5 channels, instead of $5 per channel. Both ship an API and MCP.
+- [PosteAhora vs Hootsuite: Best Hootsuite Alternative in 2026](https://posteahora.com/compare/posteahora-vs-hootsuite): Hootsuite starts at $99 per user per month; PosteAhora is $24 a month for 5 channels across 14 destinations. Hootsuite wins on listening and approvals.
+- [PosteAhora vs Metricool: Best Metricool Alternative in 2026](https://posteahora.com/compare/posteahora-vs-metricool): Metricool is cheaper for most and has a free plan, deeper analytics and ads management. PosteAhora reaches 14 destinations and ships its API on every plan.
+- [PosteAhora vs Later: Best Later Alternative in 2026](https://posteahora.com/compare/posteahora-vs-later): Later is cheaper per profile and stronger on Instagram: grid preview, link-in-bio, best times. PosteAhora reaches 14 destinations. Neither has a free plan.
+- [PosteAhora vs Sprout Social: Best Sprout Social Alternative in 2026](https://posteahora.com/compare/posteahora-vs-sprout-social): Sprout Social costs $79 to $399 per seat per month and wins on enterprise reporting, listening and care. PosteAhora is $24 a month for 5 channels.
+- [PosteAhora vs SocialBee: Best SocialBee Alternative in 2026](https://posteahora.com/compare/posteahora-vs-socialbee): SocialBee has evergreen category queues, unlimited AI copy and approvals. PosteAhora publishes to 14 destinations and includes its API on the entry plan.
+- [PosteAhora vs Publer: Best Publer Alternative in 2026](https://posteahora.com/compare/posteahora-vs-publer): Publer is cheaper below six accounts at $4.00 each; PosteAhora is cheaper above ten at $34 flat. Publer adds a free plan; PosteAhora adds an MCP server.
+- [PosteAhora vs Postiz: Best Postiz Alternative in 2026](https://posteahora.com/compare/posteahora-vs-postiz): Postiz reaches 30 destinations to PosteAhora’s 14 and is open-source. PosteAhora charges $5–$10 less per tier and bills in ARS, BRL, MXN and CLP.
+- [PosteAhora vs Publora: Best Publora Alternative in 2026](https://posteahora.com/compare/posteahora-vs-publora): Publora puts its API and MCP on a free plan for three accounts. PosteAhora adds Discord, WordPress, Dev.to and Tumblr, and costs less from five accounts up.
+- [PosteAhora vs Post Bridge: Best Post Bridge Alternative in 2026](https://posteahora.com/compare/posteahora-vs-post-bridge): Both have flat tiers, unlimited posts and MCP. PosteAhora includes the REST API on every plan and reaches 14 destinations to 10; Post Bridge adds Pinterest.
+- [PosteAhora vs Ferryman: Best Ferryman Alternative in 2026](https://posteahora.com/compare/posteahora-vs-ferryman): Ferryman auto-mirrors posts from one platform, 15 accounts for $30. PosteAhora schedules deliberately, reaches 14 destinations and costs less from ~20 accounts.
+- [PosteAhora vs SocialPilot: Best SocialPilot Alternative in 2026](https://posteahora.com/compare/posteahora-vs-socialpilot): SocialPilot starts cheaper at $20 with a 14-day no-card trial. PosteAhora includes the REST API on every plan: 30 channels for $44 vs their $100 for 20.
+- [PosteAhora vs Ayrshare: Best Ayrshare Alternative in 2026](https://posteahora.com/compare/posteahora-vs-ayrshare): Ayrshare is an API to post on behalf of your customers, from $149/mo. PosteAhora is an app plus API for your own channels, from $24. Which one fits, honestly.
+- [PosteAhora vs Vista Social: Best Vista Social Alternative in 2026](https://posteahora.com/compare/posteahora-vs-vista-social): Vista Social bundles inbox, reviews and listening from $79/mo but charges $29 extra for X. PosteAhora covers 30 channels for $44 with X and a REST API included.
+
+## Blog
+
+- [Blog](https://posteahora.com/blog): Playbooks, workflows and guides on automating social media with AI agents — for creators, brands and agencies.
+- [How to Grow an App to 400,000 Users Without Ads (TikTok)](https://posteahora.com/blog/grow-app-organic-tiktok-without-ads): ReciMe went from 20,000 to 400,000 users in a year with no ad spend. The TikTok half wasn't one account — it was several. Here's the mechanic, and the expensive mistake first.
+- [A Claude Skill That Designs Your Instagram Carousel](https://posteahora.com/blog/ai-instagram-carousel-claude-skill): One Claude Skill runs brand discovery, writes the copy, picks the fonts and exports 10 slides — then stops at your file system. Here's how to close it.
+- [What an AI Agent for Social Media Actually Is](https://posteahora.com/blog/ai-agent-for-social-media): The honest definition of an AI agent for social media, why connecting it to your accounts is the real bottleneck, and how one MCP integration replaces five.
+- [How to Build an AI UGC Content System That Scales](https://posteahora.com/blog/ai-ugc-content-system-hermes-higgsfield): Alex Nguyen documented the AI agent stack behind a StudyTok UGC army with millions of views — and why distribution, not generation, is the real bottleneck.
+- [The Claude Skill That Replaces a $79/Month Higgsfield Plan](https://posteahora.com/blog/claude-skill-replaces-higgsfield-subscription): Jay E built a Claude Skill that routes image and video generation to pay-as-you-go model APIs instead of a $79/month Higgsfield subscription.
+- [An AI Content Pipeline: From Trend to Scheduled Post](https://posteahora.com/blog/ai-content-automation-pipeline): Robin Sadeghpour open-sourced a Claude Code system that finds trends, writes platform-native drafts and schedules them. Here's how to reproduce it.
+- [How an AI Agent Got 500K+ TikTok Views in One Week](https://posteahora.com/blog/automate-tiktok-slideshows-ai-agent): A developer handed his entire TikTok marketing to an AI agent and went from zero to 500,000+ views in five days. Here's the system step by step, and how to reproduce it with PosteAhora.
+- [Claude + Higgsfield: A Self-Writing Instagram Carousel](https://posteahora.com/blog/claude-higgsfield-instagram-carousel-automation): Jason Lee wired Claude to research a trending post, write the carousel and send prompts to Higgsfield — a finished Instagram post every morning.
+- [How to Automate Social Media With AI Agents](https://posteahora.com/blog/automate-social-media-with-ai-agents): A practical playbook for running Instagram, TikTok, LinkedIn and X on autopilot with AI agents — connect Claude or ChatGPT over MCP, keep human approval, and publish everywhere from one place.
+
+## Developer documentation
+
+- [Docs — Build with the PosteAhora scheduling & publishing API](https://posteahora.com/docs): Developer docs for PosteAhora: authenticate, publish and schedule posts, read analytics and upload media across every network — via REST or MCP.
+- [Authentication — PosteAhora API docs](https://posteahora.com/docs/authentication): Authenticate every PosteAhora API request with an API key. Learn about live vs test keys, scopes, plan requirements, error codes and rate limits.
+- [Quickstart — PosteAhora API docs](https://posteahora.com/docs/quickstart): From zero to a published social post in three steps: get an API key, list your connected accounts, and publish across networks with one request.
+- [Publishing guide — How PosteAhora delivers your posts](https://posteahora.com/docs/platform): What happens between hitting publish and a post appearing on a network: composing, scheduling, per-network fan-out, statuses and how failures are reported.
+- [Networks & limits — Instagram, TikTok, X, LinkedIn and more](https://posteahora.com/docs/platform/networks): Every supported network: post types, media counts, caption limits and the publish-time constraints that decide whether a post lands.
+- [Media requirements — aspect ratios, formats and size limits](https://posteahora.com/docs/platform/media): Accepted aspect ratios, file formats and size caps per network, where the official specs are out of date, and what PosteAhora corrects automatically.
+- [Plans & quotas — seats, posts, storage and team limits](https://posteahora.com/docs/platform/plans): How seats, monthly posts, storage and team members are counted on each PosteAhora plan, and which allowances pool across your connected accounts.
+- [Connect ChatGPT to PosteAhora (MCP) — step by step | Docs](https://posteahora.com/docs/mcp/chatgpt): Add PosteAhora as a custom MCP app in ChatGPT and schedule social posts from a chat. Every step with screenshots, checked by us.
+- [Connect Claude to PosteAhora (MCP) — step by step | Docs](https://posteahora.com/docs/mcp/claude): Add PosteAhora as a custom connector in Claude and schedule social posts from a chat. Every step with screenshots, checked by us.
+- [Connect Perplexity to PosteAhora (MCP) — step by step | Docs](https://posteahora.com/docs/mcp/perplexity): Add PosteAhora as a custom remote connector in Perplexity and schedule social posts from a thread. Eight steps, from Perplexity's help centre.
+- [Connect Cursor to PosteAhora (MCP) — step by step | Docs](https://posteahora.com/docs/mcp/cursor): Add PosteAhora to Cursor with the one-click install link or mcp.json, sign in with OAuth and schedule posts from Agent chat or the Cursor CLI. Steps from Cursor's docs.
+- [Connect Codex to PosteAhora (MCP) — step by step | Docs](https://posteahora.com/docs/mcp/codex): Add PosteAhora to Codex with codex mcp add, sign in with OAuth and schedule posts from the CLI, the Codex app or the IDE extension. Steps from the Codex docs.
+- [Connect Antigravity to PosteAhora (MCP) — step by step | Docs](https://posteahora.com/docs/mcp/antigravity): Add PosteAhora to Google Antigravity in mcp_config.json, authenticate with OAuth and schedule posts from an agent. Steps from the Antigravity docs.
+- [API Reference — PosteAhora REST API](https://posteahora.com/docs/api): The PosteAhora REST API (v1): create ideas, publish and schedule posts, read analytics and upload media across every network — with API-key auth.
+- [Accounts — PosteAhora API reference](https://posteahora.com/docs/api/accounts): List a user’s connected social accounts via the PosteAhora API. Every publish targets an account id from this endpoint.
+- [Ideas — PosteAhora API reference](https://posteahora.com/docs/api/ideas): Create, list, update and delete content ideas via the PosteAhora REST API: the backlog behind every post, with status, notes and the account it is meant for.
+- [Posts — PosteAhora API reference](https://posteahora.com/docs/api/posts): Create drafts, schedule, publish now, edit, list and delete social posts across every network via the PosteAhora API.
+- [Platform options — PosteAhora API reference](https://posteahora.com/docs/api/platform-options): Per-network settings for the PosteAhora API — YouTube title & description, TikTok privacy & disclosures, Instagram Reel settings, and a full multi-platform video example.
+- [Analytics — PosteAhora API reference](https://posteahora.com/docs/api/analytics): Read per-post and aggregated social analytics — views, likes, comments, shares and more — via the PosteAhora API.
+- [Media — PosteAhora API reference](https://posteahora.com/docs/api/media): Upload images and video through the PosteAhora REST API: request a presigned upload URL, send the file, then attach the returned media to any post.
+
+## Product
+
+- [Roadmap](https://posteahora.com/roadmap): See what we're building next for PosteAhora: upcoming integrations and features. Vote on priorities from inside the app.
+- [Changelog](https://posteahora.com/changelog): Every new feature, improvement and fix in PosteAhora, newest first and in plain language: new networks, composer and scheduling changes, API and MCP.
+- [Partner Program — Earn 30% recurring](https://posteahora.com/affiliate): Share PosteAhora and earn 30% recurring commission for the lifetime of every customer you refer. Free to join, no cap. Get your link in seconds.
+
+## Legal
+
+- [Privacy Policy](https://posteahora.com/privacy): How PosteAhora collects, uses and protects your data — OAuth tokens, content ownership and your privacy rights, explained.
+- [Terms of Service](https://posteahora.com/terms): The terms governing your use of PosteAhora — accounts, subscriptions, acceptable use, and your rights and responsibilities on our scheduling platform.
+- [Refund Policy](https://posteahora.com/refund): PosteAhora’s refund and cancellation policy for monthly and yearly subscriptions — when you’re eligible, how to request a refund, and how long processing takes.
+- [Data Deletion](https://posteahora.com/data-deletion): Request permanent deletion of your PosteAhora account and connected social data, learn exactly what we remove, and check the status of an existing request.
+
+## Languages
+
+Pages are available in English, Español, Português, Deutsch. English lives at
+the root; the others use a path prefix. Not every page exists in every
+language — each page links its own alternates via `rel="alternate" hreflang`,
+and https://posteahora.com/sitemap.xml is authoritative.
+
+- English: https://posteahora.com/
+- Español: https://posteahora.com/es
+- Português: https://posteahora.com/pt
+- Deutsch: https://posteahora.com/de

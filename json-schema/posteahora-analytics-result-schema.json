@@ -1,0 +1,129 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/posteahora/main/json-schema/posteahora-analytics-result-schema.json",
+  "title": "AnalyticsResult",
+  "x-generated": "2026-09-28",
+  "x-method": "derived",
+  "x-generator": "derive-json-schema.py",
+  "x-source": "openapi/_original/posteahora-api-openapi.yml#/components/schemas/AnalyticsResult",
+  "type": "object",
+  "properties": {
+    "period": {
+      "type": "string"
+    },
+    "summary": {
+      "type": "object",
+      "properties": {
+        "totals": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "number"
+          }
+        },
+        "byPlatform": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "number"
+            }
+          }
+        }
+      }
+    },
+    "posts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "postId": {
+            "type": "string"
+          },
+          "caption": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "publishedAt": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "format": "date-time"
+          },
+          "platform": {
+            "type": "string"
+          },
+          "views": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "likes": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "comments": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "shares": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "reach": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "saves": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "impressions": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "reposts": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "totalInteractions": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "fetchedAt": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "format": "date-time"
+          },
+          "error": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        }
+      }
+    }
+  }
+}

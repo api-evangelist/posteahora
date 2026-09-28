@@ -1,0 +1,454 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/posteahora/main/json-schema/posteahora-update-post-request-schema.json",
+  "title": "UpdatePostRequest",
+  "description": "Edit a draft or scheduled post. Only sent fields are touched.",
+  "x-generated": "2026-09-28",
+  "x-method": "derived",
+  "x-generator": "derive-json-schema.py",
+  "x-source": "openapi/_original/posteahora-api-openapi.yml#/components/schemas/UpdatePostRequest",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string"
+    },
+    "caption": {
+      "type": "string"
+    },
+    "hashtags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "mediaUrls": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "uri"
+      }
+    },
+    "mediaType": {
+      "type": "string",
+      "enum": [
+        "image",
+        "video"
+      ]
+    },
+    "postType": {
+      "type": "string",
+      "enum": [
+        "post",
+        "reel",
+        "story"
+      ]
+    },
+    "platforms": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "connectedAccountId": {
+      "type": "string"
+    },
+    "platformOptions": {
+      "$ref": "#/$defs/PlatformOptions"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "draft",
+        "scheduled"
+      ]
+    },
+    "scheduledAt": {
+      "type": "string",
+      "format": "date-time"
+    }
+  },
+  "$defs": {
+    "BlueskyOptions": {
+      "type": "object",
+      "properties": {
+        "langs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "DiscordOptions": {
+      "type": "object",
+      "properties": {
+        "channelId": {
+          "type": "string"
+        }
+      }
+    },
+    "InstagramOptions": {
+      "type": "object",
+      "description": "Set postType \"reel\" (top level) for a Reel, \"story\" for a Story.",
+      "properties": {
+        "shareToFeed": {
+          "type": "boolean"
+        },
+        "coverUrl": {
+          "type": "string",
+          "format": "uri"
+        },
+        "thumbOffsetMs": {
+          "type": "number"
+        },
+        "audioName": {
+          "type": "string"
+        },
+        "collaborators": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "locationId": {
+          "type": "string"
+        },
+        "userTags": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "username": {
+                "type": "string"
+              },
+              "x": {
+                "type": "number"
+              },
+              "y": {
+                "type": "number"
+              }
+            },
+            "required": [
+              "username"
+            ]
+          }
+        },
+        "altText": {
+          "type": "string"
+        },
+        "isAiGenerated": {
+          "type": "boolean"
+        },
+        "isTrialReel": {
+          "type": "boolean",
+          "description": "reel only"
+        },
+        "trialGraduationStrategy": {
+          "type": "string",
+          "enum": [
+            "MANUAL",
+            "SS_PERFORMANCE"
+          ],
+          "description": "reel only"
+        }
+      }
+    },
+    "MastodonOptions": {
+      "type": "object",
+      "properties": {
+        "visibility": {
+          "type": "string",
+          "enum": [
+            "public",
+            "unlisted",
+            "private",
+            "direct"
+          ]
+        },
+        "spoilerText": {
+          "type": "string"
+        },
+        "sensitive": {
+          "type": "boolean"
+        },
+        "language": {
+          "type": "string"
+        }
+      }
+    },
+    "PinterestOptions": {
+      "type": "object",
+      "description": "boardId is REQUIRED and validated on create (400 without it). A Pin needs at least one image; 2–5 images make a carousel.",
+      "required": [
+        "boardId"
+      ],
+      "properties": {
+        "boardId": {
+          "type": "string",
+          "description": "Board id from GET /accounts/{id}/boards"
+        },
+        "boardName": {
+          "type": "string",
+          "description": "Display only"
+        },
+        "title": {
+          "type": "string",
+          "maxLength": 100
+        },
+        "link": {
+          "type": "string",
+          "format": "uri"
+        },
+        "altText": {
+          "type": "string",
+          "maxLength": 500
+        },
+        "coverUrl": {
+          "type": "string",
+          "format": "uri",
+          "description": "Video Pins: 2:3 cover image URL"
+        },
+        "thumbOffsetMs": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Video Pins: keyframe used as cover when coverUrl is absent (ms)"
+        }
+      }
+    },
+    "PlatformOptions": {
+      "type": "object",
+      "description": "Per-network settings, keyed by platform id.",
+      "properties": {
+        "youtube": {
+          "$ref": "#/$defs/YouTubeOptions"
+        },
+        "tiktok": {
+          "$ref": "#/$defs/TikTokOptions"
+        },
+        "instagram": {
+          "$ref": "#/$defs/InstagramOptions"
+        },
+        "threads": {
+          "$ref": "#/$defs/ThreadsOptions"
+        },
+        "bluesky": {
+          "$ref": "#/$defs/BlueskyOptions"
+        },
+        "mastodon": {
+          "$ref": "#/$defs/MastodonOptions"
+        },
+        "telegram": {
+          "$ref": "#/$defs/TelegramOptions"
+        },
+        "discord": {
+          "$ref": "#/$defs/DiscordOptions"
+        },
+        "pinterest": {
+          "$ref": "#/$defs/PinterestOptions"
+        }
+      },
+      "additionalProperties": true
+    },
+    "TelegramOptions": {
+      "type": "object",
+      "properties": {
+        "disableNotification": {
+          "type": "boolean"
+        },
+        "protectContent": {
+          "type": "boolean"
+        }
+      }
+    },
+    "ThreadsOptions": {
+      "type": "object",
+      "properties": {
+        "replyControl": {
+          "type": "string",
+          "enum": [
+            "everyone",
+            "accounts_you_follow",
+            "mentioned_only",
+            "parent_post_author_only",
+            "followers_only"
+          ]
+        },
+        "topic": {
+          "type": "string"
+        },
+        "altText": {
+          "type": "string"
+        },
+        "linkAttachment": {
+          "type": "string",
+          "format": "uri"
+        },
+        "quotePostId": {
+          "type": "string"
+        },
+        "locationId": {
+          "type": "string"
+        },
+        "allowlistedCountryCodes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "chainItems": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "text": {
+                "type": "string"
+              },
+              "mediaUrl": {
+                "type": "string",
+                "format": "uri"
+              },
+              "mediaType": {
+                "type": "string",
+                "enum": [
+                  "image",
+                  "video"
+                ]
+              },
+              "altText": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "text"
+            ]
+          }
+        }
+      }
+    },
+    "TikTokOptions": {
+      "type": "object",
+      "properties": {
+        "privacyLevel": {
+          "type": "string",
+          "enum": [
+            "PUBLIC_TO_EVERYONE",
+            "MUTUAL_FOLLOW_FRIENDS",
+            "FOLLOWER_OF_CREATOR",
+            "SELF_ONLY"
+          ]
+        },
+        "disableComment": {
+          "type": "boolean"
+        },
+        "brandContentToggle": {
+          "type": "boolean"
+        },
+        "brandOrganicToggle": {
+          "type": "boolean"
+        },
+        "isAigc": {
+          "type": "boolean"
+        },
+        "postMode": {
+          "type": "string",
+          "enum": [
+            "DIRECT_POST",
+            "MEDIA_UPLOAD"
+          ],
+          "default": "DIRECT_POST"
+        },
+        "disableDuet": {
+          "type": "boolean",
+          "description": "video only"
+        },
+        "disableStitch": {
+          "type": "boolean",
+          "description": "video only"
+        },
+        "videoCoverTimestampMs": {
+          "type": "number",
+          "description": "video only"
+        },
+        "autoAddMusic": {
+          "type": "boolean",
+          "description": "photo only"
+        },
+        "photoCoverIndex": {
+          "type": "number",
+          "description": "photo only"
+        },
+        "photoTitle": {
+          "type": "string",
+          "maxLength": 90,
+          "description": "photo only"
+        }
+      },
+      "required": [
+        "privacyLevel",
+        "disableComment",
+        "brandContentToggle",
+        "brandOrganicToggle",
+        "isAigc"
+      ]
+    },
+    "YouTubeOptions": {
+      "type": "object",
+      "description": "The video description is the post caption (platformCaptions.youtube, ≤5000 chars). The video title is the required `title` field. There is no \"Shorts\" flag — a vertical clip ≤3 min is auto-classified as a Short.\n",
+      "properties": {
+        "title": {
+          "type": "string",
+          "maxLength": 100
+        },
+        "categoryId": {
+          "type": "string"
+        },
+        "madeForKids": {
+          "type": "boolean"
+        },
+        "privacyStatus": {
+          "type": "string",
+          "enum": [
+            "public",
+            "unlisted",
+            "private"
+          ],
+          "default": "private"
+        },
+        "tags": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "defaultLanguage": {
+          "type": "string"
+        },
+        "containsSyntheticMedia": {
+          "type": "boolean"
+        },
+        "embeddable": {
+          "type": "boolean"
+        },
+        "publicStatsViewable": {
+          "type": "boolean"
+        },
+        "license": {
+          "type": "string",
+          "enum": [
+            "youtube",
+            "creativeCommon"
+          ]
+        },
+        "thumbnailUrl": {
+          "type": "string",
+          "format": "uri"
+        }
+      },
+      "required": [
+        "title",
+        "categoryId",
+        "madeForKids"
+      ]
+    }
+  }
+}

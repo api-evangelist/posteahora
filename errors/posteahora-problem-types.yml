@@ -1,0 +1,60 @@
+generated: '2026-09-28'
+method: derived
+generator: derive-problem-types.py
+source:
+- openapi/_original/posteahora-api-openapi.yml
+format: custom
+envelope:
+  media_type: application/json
+  schema: Error
+coverage:
+  operations: 15
+  statuses_declared: 7
+problems:
+- status: 400
+  title: Bad Request
+  description: Invalid request
+  operations: 4
+  media_types:
+  - application/json
+  schema: Error
+- status: 401
+  title: Unauthorized
+  description: Missing or invalid API key
+  operations: 2
+  media_types:
+  - application/json
+  schema: Error
+- status: 402
+  title: Payment Required
+  description: Monthly post quota reached
+  operations: 1
+  media_types:
+  - application/json
+  schema: Error
+- status: 403
+  title: Forbidden
+  description: Key lacks the required scope (or viewer-role key attempting a write)
+  operations: 2
+  media_types:
+  - application/json
+  schema: Error
+- status: 404
+  title: Not Found
+  description: Resource not found (or not in the key's workspace)
+  operations: 7
+  media_types:
+  - application/json
+  schema: Error
+- status: 409
+  title: Conflict
+  description: Account disconnected — reconnect it in the app
+  operations: 1
+  media_types: []
+  schema: null
+- status: 429
+  title: Too Many Requests
+  description: Pinterest rate limit reached
+  operations: 1
+  media_types: []
+  schema: null

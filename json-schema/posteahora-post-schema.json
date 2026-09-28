@@ -1,0 +1,124 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/posteahora/main/json-schema/posteahora-post-schema.json",
+  "title": "Post",
+  "x-generated": "2026-09-28",
+  "x-method": "derived",
+  "x-generator": "derive-json-schema.py",
+  "x-source": "openapi/_original/posteahora-api-openapi.yml#/components/schemas/Post",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "title": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "caption": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "platforms": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "draft",
+        "scheduled",
+        "queued",
+        "published",
+        "partial_published",
+        "failed"
+      ]
+    },
+    "scheduled_at": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "date-time"
+    },
+    "published_at": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "date-time"
+    },
+    "media_urls": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "uri"
+      }
+    },
+    "media_type": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "enum": [
+        "image",
+        "video",
+        null
+      ]
+    },
+    "connected_account_id": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "uuid"
+    },
+    "platform_results": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/PlatformResult"
+      }
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    }
+  },
+  "$defs": {
+    "PlatformResult": {
+      "type": "object",
+      "properties": {
+        "platform": {
+          "type": "string"
+        },
+        "success": {
+          "type": "boolean"
+        },
+        "error": {
+          "type": "string"
+        },
+        "remote_post_id": {
+          "type": "string"
+        },
+        "remote_publish_id": {
+          "type": "string"
+        },
+        "remote_permalink": {
+          "type": "string",
+          "format": "uri"
+        }
+      },
+      "required": [
+        "platform",
+        "success"
+      ]
+    }
+  }
+}

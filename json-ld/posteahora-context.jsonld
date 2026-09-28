@@ -1,0 +1,452 @@
+{
+  "@context": {
+    "@vocab": "https://posteahora.com/schema#",
+    "schema": "https://schema.org/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "posteahora": "https://posteahora.com/schema#",
+    "Error": "posteahora:Error",
+    "error": {
+      "@id": "posteahora:error",
+      "@type": "xsd:string"
+    },
+    "Account": "posteahora:Account",
+    "id": {
+      "@id": "posteahora:id",
+      "@type": "xsd:string"
+    },
+    "platform": {
+      "@id": "posteahora:platform",
+      "@type": "xsd:string"
+    },
+    "platform_username": {
+      "@id": "posteahora:platform_username",
+      "@type": "xsd:string"
+    },
+    "platform_account_id": {
+      "@id": "posteahora:platform_account_id",
+      "@type": "xsd:string"
+    },
+    "is_connected": {
+      "@id": "posteahora:is_connected",
+      "@type": "xsd:boolean"
+    },
+    "requires_reauth": {
+      "@id": "posteahora:requires_reauth",
+      "@type": "xsd:boolean"
+    },
+    "profile_image_url": {
+      "@id": "posteahora:profile_image_url",
+      "@type": "@id"
+    },
+    "connected_at": {
+      "@id": "posteahora:connected_at",
+      "@type": "xsd:dateTime"
+    },
+    "Workspace": "posteahora:Workspace",
+    "name": {
+      "@id": "posteahora:name",
+      "@type": "xsd:string"
+    },
+    "isPersonal": {
+      "@id": "posteahora:isPersonal",
+      "@type": "xsd:boolean"
+    },
+    "role": {
+      "@id": "posteahora:role",
+      "@type": "xsd:string"
+    },
+    "active": {
+      "@id": "posteahora:active",
+      "@type": "xsd:boolean"
+    },
+    "IdeaInput": "posteahora:IdeaInput",
+    "title": {
+      "@id": "posteahora:title",
+      "@type": "xsd:string"
+    },
+    "caption": {
+      "@id": "posteahora:caption",
+      "@type": "xsd:string"
+    },
+    "tags": {
+      "@id": "posteahora:tags",
+      "@container": "@list"
+    },
+    "mediaUrls": {
+      "@id": "posteahora:mediaUrls",
+      "@container": "@list"
+    },
+    "mediaType": {
+      "@id": "posteahora:mediaType",
+      "@type": "xsd:string"
+    },
+    "status": {
+      "@id": "posteahora:status",
+      "@type": "xsd:string"
+    },
+    "AccountMapping": "posteahora:AccountMapping",
+    "accountId": {
+      "@id": "posteahora:accountId",
+      "@type": "xsd:string"
+    },
+    "CreatePostRequest": "posteahora:CreatePostRequest",
+    "accountMappings": {
+      "@id": "posteahora:accountMappings",
+      "@container": "@list"
+    },
+    "platforms": {
+      "@id": "posteahora:platforms",
+      "@container": "@list"
+    },
+    "postType": {
+      "@id": "posteahora:postType",
+      "@type": "xsd:string"
+    },
+    "hashtags": {
+      "@id": "posteahora:hashtags",
+      "@container": "@list"
+    },
+    "platformCaptions": {
+      "@id": "posteahora:platformCaptions"
+    },
+    "platformOptions": {
+      "@id": "posteahora:platformOptions",
+      "@type": "@id"
+    },
+    "scheduledAt": {
+      "@id": "posteahora:scheduledAt",
+      "@type": "xsd:dateTime"
+    },
+    "UpdatePostRequest": "posteahora:UpdatePostRequest",
+    "connectedAccountId": {
+      "@id": "posteahora:connectedAccountId",
+      "@type": "xsd:string"
+    },
+    "CreatePostResult": "posteahora:CreatePostResult",
+    "postIds": {
+      "@id": "posteahora:postIds",
+      "@container": "@list"
+    },
+    "dispatchDeferred": {
+      "@id": "posteahora:dispatchDeferred",
+      "@type": "xsd:boolean"
+    },
+    "PlatformResult": "posteahora:PlatformResult",
+    "success": {
+      "@id": "posteahora:success",
+      "@type": "xsd:boolean"
+    },
+    "remote_post_id": {
+      "@id": "posteahora:remote_post_id",
+      "@type": "xsd:string"
+    },
+    "remote_publish_id": {
+      "@id": "posteahora:remote_publish_id",
+      "@type": "xsd:string"
+    },
+    "remote_permalink": {
+      "@id": "posteahora:remote_permalink",
+      "@type": "@id"
+    },
+    "Post": "posteahora:Post",
+    "scheduled_at": {
+      "@id": "posteahora:scheduled_at",
+      "@type": "xsd:dateTime"
+    },
+    "published_at": {
+      "@id": "posteahora:published_at",
+      "@type": "xsd:dateTime"
+    },
+    "media_urls": {
+      "@id": "posteahora:media_urls",
+      "@container": "@list"
+    },
+    "media_type": {
+      "@id": "posteahora:media_type",
+      "@type": "xsd:string"
+    },
+    "connected_account_id": {
+      "@id": "posteahora:connected_account_id",
+      "@type": "xsd:string"
+    },
+    "platform_results": {
+      "@id": "posteahora:platform_results",
+      "@container": "@list"
+    },
+    "created_at": {
+      "@id": "posteahora:created_at",
+      "@type": "xsd:dateTime"
+    },
+    "AnalyticsResult": "posteahora:AnalyticsResult",
+    "period": {
+      "@id": "posteahora:period",
+      "@type": "xsd:string"
+    },
+    "summary": {
+      "@id": "posteahora:summary"
+    },
+    "posts": {
+      "@id": "posteahora:posts",
+      "@container": "@list"
+    },
+    "PlatformOptions": "posteahora:PlatformOptions",
+    "youtube": {
+      "@id": "posteahora:youtube",
+      "@type": "@id"
+    },
+    "tiktok": {
+      "@id": "posteahora:tiktok",
+      "@type": "@id"
+    },
+    "instagram": {
+      "@id": "posteahora:instagram",
+      "@type": "@id"
+    },
+    "threads": {
+      "@id": "posteahora:threads",
+      "@type": "@id"
+    },
+    "bluesky": {
+      "@id": "posteahora:bluesky",
+      "@type": "@id"
+    },
+    "mastodon": {
+      "@id": "posteahora:mastodon",
+      "@type": "@id"
+    },
+    "telegram": {
+      "@id": "posteahora:telegram",
+      "@type": "@id"
+    },
+    "discord": {
+      "@id": "posteahora:discord",
+      "@type": "@id"
+    },
+    "pinterest": {
+      "@id": "posteahora:pinterest",
+      "@type": "@id"
+    },
+    "YouTubeOptions": "posteahora:YouTubeOptions",
+    "categoryId": {
+      "@id": "posteahora:categoryId",
+      "@type": "xsd:string"
+    },
+    "madeForKids": {
+      "@id": "posteahora:madeForKids",
+      "@type": "xsd:boolean"
+    },
+    "privacyStatus": {
+      "@id": "posteahora:privacyStatus",
+      "@type": "xsd:string"
+    },
+    "defaultLanguage": {
+      "@id": "posteahora:defaultLanguage",
+      "@type": "xsd:string"
+    },
+    "containsSyntheticMedia": {
+      "@id": "posteahora:containsSyntheticMedia",
+      "@type": "xsd:boolean"
+    },
+    "embeddable": {
+      "@id": "posteahora:embeddable",
+      "@type": "xsd:boolean"
+    },
+    "publicStatsViewable": {
+      "@id": "posteahora:publicStatsViewable",
+      "@type": "xsd:boolean"
+    },
+    "license": {
+      "@id": "posteahora:license",
+      "@type": "xsd:string"
+    },
+    "thumbnailUrl": {
+      "@id": "posteahora:thumbnailUrl",
+      "@type": "@id"
+    },
+    "TikTokOptions": "posteahora:TikTokOptions",
+    "privacyLevel": {
+      "@id": "posteahora:privacyLevel",
+      "@type": "xsd:string"
+    },
+    "disableComment": {
+      "@id": "posteahora:disableComment",
+      "@type": "xsd:boolean"
+    },
+    "brandContentToggle": {
+      "@id": "posteahora:brandContentToggle",
+      "@type": "xsd:boolean"
+    },
+    "brandOrganicToggle": {
+      "@id": "posteahora:brandOrganicToggle",
+      "@type": "xsd:boolean"
+    },
+    "isAigc": {
+      "@id": "posteahora:isAigc",
+      "@type": "xsd:boolean"
+    },
+    "postMode": {
+      "@id": "posteahora:postMode",
+      "@type": "xsd:string"
+    },
+    "disableDuet": {
+      "@id": "posteahora:disableDuet",
+      "@type": "xsd:boolean"
+    },
+    "disableStitch": {
+      "@id": "posteahora:disableStitch",
+      "@type": "xsd:boolean"
+    },
+    "videoCoverTimestampMs": {
+      "@id": "posteahora:videoCoverTimestampMs",
+      "@type": "xsd:decimal"
+    },
+    "autoAddMusic": {
+      "@id": "posteahora:autoAddMusic",
+      "@type": "xsd:boolean"
+    },
+    "photoCoverIndex": {
+      "@id": "posteahora:photoCoverIndex",
+      "@type": "xsd:decimal"
+    },
+    "photoTitle": {
+      "@id": "posteahora:photoTitle",
+      "@type": "xsd:string"
+    },
+    "InstagramOptions": "posteahora:InstagramOptions",
+    "shareToFeed": {
+      "@id": "posteahora:shareToFeed",
+      "@type": "xsd:boolean"
+    },
+    "coverUrl": {
+      "@id": "posteahora:coverUrl",
+      "@type": "@id"
+    },
+    "thumbOffsetMs": {
+      "@id": "posteahora:thumbOffsetMs",
+      "@type": "xsd:decimal"
+    },
+    "audioName": {
+      "@id": "posteahora:audioName",
+      "@type": "xsd:string"
+    },
+    "collaborators": {
+      "@id": "posteahora:collaborators",
+      "@container": "@list"
+    },
+    "locationId": {
+      "@id": "posteahora:locationId",
+      "@type": "xsd:string"
+    },
+    "userTags": {
+      "@id": "posteahora:userTags",
+      "@container": "@list"
+    },
+    "altText": {
+      "@id": "posteahora:altText",
+      "@type": "xsd:string"
+    },
+    "isAiGenerated": {
+      "@id": "posteahora:isAiGenerated",
+      "@type": "xsd:boolean"
+    },
+    "isTrialReel": {
+      "@id": "posteahora:isTrialReel",
+      "@type": "xsd:boolean"
+    },
+    "trialGraduationStrategy": {
+      "@id": "posteahora:trialGraduationStrategy",
+      "@type": "xsd:string"
+    },
+    "ThreadsOptions": "posteahora:ThreadsOptions",
+    "replyControl": {
+      "@id": "posteahora:replyControl",
+      "@type": "xsd:string"
+    },
+    "topic": {
+      "@id": "posteahora:topic",
+      "@type": "xsd:string"
+    },
+    "linkAttachment": {
+      "@id": "posteahora:linkAttachment",
+      "@type": "@id"
+    },
+    "quotePostId": {
+      "@id": "posteahora:quotePostId",
+      "@type": "xsd:string"
+    },
+    "allowlistedCountryCodes": {
+      "@id": "posteahora:allowlistedCountryCodes",
+      "@container": "@list"
+    },
+    "chainItems": {
+      "@id": "posteahora:chainItems",
+      "@container": "@list"
+    },
+    "BlueskyOptions": "posteahora:BlueskyOptions",
+    "langs": {
+      "@id": "posteahora:langs",
+      "@container": "@list"
+    },
+    "MastodonOptions": "posteahora:MastodonOptions",
+    "visibility": {
+      "@id": "posteahora:visibility",
+      "@type": "xsd:string"
+    },
+    "spoilerText": {
+      "@id": "posteahora:spoilerText",
+      "@type": "xsd:string"
+    },
+    "sensitive": {
+      "@id": "posteahora:sensitive",
+      "@type": "xsd:boolean"
+    },
+    "language": {
+      "@id": "posteahora:language",
+      "@type": "xsd:string"
+    },
+    "TelegramOptions": "posteahora:TelegramOptions",
+    "disableNotification": {
+      "@id": "posteahora:disableNotification",
+      "@type": "xsd:boolean"
+    },
+    "protectContent": {
+      "@id": "posteahora:protectContent",
+      "@type": "xsd:boolean"
+    },
+    "PinterestOptions": "posteahora:PinterestOptions",
+    "boardId": {
+      "@id": "posteahora:boardId",
+      "@type": "xsd:string"
+    },
+    "boardName": {
+      "@id": "posteahora:boardName",
+      "@type": "xsd:string"
+    },
+    "link": {
+      "@id": "posteahora:link",
+      "@type": "@id"
+    },
+    "PinterestBoard": "posteahora:PinterestBoard",
+    "privacy": {
+      "@id": "posteahora:privacy",
+      "@type": "xsd:string"
+    },
+    "pinCount": {
+      "@id": "posteahora:pinCount",
+      "@type": "xsd:integer"
+    },
+    "DiscordOptions": "posteahora:DiscordOptions",
+    "channelId": {
+      "@id": "posteahora:channelId",
+      "@type": "xsd:string"
+    }
+  },
+  "@type": "schema:Dataset",
+  "schema:name": "PosteAhora API JSON-LD context",
+  "schema:description": "A JSON-LD @context for the objects PosteAhora's own API contract declares: one class per component schema, one property per declared field, typed from the contract. Derived by script (derive-json-ld.py, 2026-09-28) from openapi/_original/posteahora-api-openapi.yml.",
+  "dcterms:created": "2026-09-28",
+  "dcterms:source": [
+    "openapi/_original/posteahora-api-openapi.yml"
+  ]
+}

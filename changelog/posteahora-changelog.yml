@@ -1,0 +1,76 @@
+generated: '2026-09-27'
+method: searched
+generator: extract-docs-artifacts.py (local)
+source: https://posteahora.com/changelog
+sources:
+- https://posteahora.com/changelog
+entries:
+- breaking: false
+  highlights:
+  - Pick WordPress categories and tags by name
+  - The WordPress options in the composer now list your site's categories and tags, so you choose them by name instead of typing numeric IDs.
+  date: '2026-09-24'
+- breaking: false
+  highlights:
+  - Clearer reasons when a Facebook post fails
+  - When Facebook rejects a post, you now see what went wrong and how to fix it, instead of a raw error code from Facebook.
+  date: '2026-09-24'
+- breaking: false
+  highlights:
+  - YouTube videos scheduled through the API or MCP now keep their title
+  - A YouTube video created through the API or an AI assistant (MCP) could be accepted and then fail at publish because its title never reached
+    YouTube. The post title is now used as the video title.
+  date: '2026-09-24'
+- breaking: false
+  highlights:
+  - LinkedIn posts no longer get cut off
+  - LinkedIn captions containing brackets, parentheses or other special characters were published only up to that character. The full caption
+    now goes out intact.
+  date: '2026-09-22'
+- breaking: false
+  highlights:
+  - 'ChatGPT: a step-by-step guide with screenshots'
+  - Connecting ChatGPT to PosteAhora now has a walkthrough in the docs — eight steps, one screenshot each, checked by us on a real account — and
+    the ChatGPT page inside the app links straight to it.
+  date: '2026-09-15'
+- breaking: false
+  highlights:
+  - 'Small fixes: blank pages, breached passwords, the phone menu'
+  - If the app fails to load you now get a message and a Reload button instead of a blank page; a password that has appeared in a data breach
+    is named as such at sign-up instead of "too short"; and the "All sections" menu on phones scrolls all the way to Sign out.
+  date: '2026-09-14'
+- breaking: false
+  highlights:
+  - Video thumbnails load instantly, and a tidier cover picker
+  - Uploaded videos now get a preview frame at upload time, so your lists and library show thumbnails without downloading the videos — and picking
+    a cover for Reels and TikTok is one compact row with a live preview.
+  date: '2026-09-12'
+- breaking: false
+  highlights:
+  - Cross‑post with each network's own media limit
+  - Attach as many photos as your widest network allows — Instagram gets all 10, X publishes the first 4 — instead of every network being capped
+    at the smallest limit.
+  date: '2026-09-11'
+- breaking: false
+  highlights:
+  - Select all in Uploads
+  - Select or deselect every file in the current filter — across all pages.
+  date: '2026-09-11'
+- breaking: false
+  highlights:
+  - More reliable, always‑fresh analytics
+  - Your post analytics now refresh on a smart schedule — recent posts update frequently, older ones less often — so your stats stay accurate
+    and up to date.
+  date: '2026-07-14'
+- breaking: false
+  highlights:
+  - 'Action needed: We updated the AI assistant connection'
+  - If you use PosteAhora inside an AI chat, please reconnect it — the connection was upgraded and needs to be re‑linked once.
+  date: '2026-07-05'
+- breaking: false
+  highlights:
+  - Publish to Discord
+  - You can now send your posts straight to a Discord channel, alongside all your other social networks.
+  date: '2026-07-03'
+note: Versioning scheme and current version are not listed on the page.
+docs: https://posteahora.com/changelog
