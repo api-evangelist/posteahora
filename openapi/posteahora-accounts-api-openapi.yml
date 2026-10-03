@@ -1,0 +1,194 @@
+openapi: 3.2.0
+info:
+  title: PosteAhora Public Accounts API
+  version: 1.0.0
+  description: 'Key-authenticated REST gateway over the same publishing pipeline as the PosteAhora web app. It powers the MCP server, the CLI, the n8n node, and any third-party integration. This is the frozen **v1** contract: additive changes only.
+
+
+    Human-readable docs: https://posteahora.com/docs/api'
+  contact:
+    name: PosteAhora
+    url: https://posteahora.com/docs/api
+servers:
+- url: https://api.posteahora.com/functions/v1/api
+  description: Production. The /functions/v1/ segment is part of the stable URL — do not strip it.
+security:
+- ApiKey: []
+tags:
+- name: Accounts
+paths:
+  /accounts:
+    get:
+      tags:
+      - Accounts
+      summary: List connected social accounts (in the key's workspace)
+      description: Call this first — publishing needs each account's id. Tokens are never returned.
+      security:
+      - ApiKey: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  accounts:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Account'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+      operationId: getAccounts
+      x-operation-id-source: derived
+  /accounts/{id}/boards:
+    get:
+      tags:
+      - Accounts
+      summary: List the Pinterest boards of a connected account
+      description: A Pin is created on a board — pick one here and pass its id as platformOptions.pinterest.boardId. Pinterest accounts only.
+      security:
+      - ApiKey: []
+      parameters:
+      - in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        description: connected_accounts.id of a Pinterest account
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  boards:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/PinterestBoard'
+        '400':
+          description: Not a Pinterest account
+        '404':
+          description: Account not found in this workspace
+        '409':
+          description: Account disconnected — reconnect it in the app
+        '429':
+          description: Pinterest rate limit reached
+      operationId: getAccountsByIdBoards
+      x-operation-id-source: derived
+  /workspaces:
+    get:
+      tags:
+      - Accounts
+      summary: List the workspaces you belong to
+      description: A key is bound to one workspace; active=true marks the one this key acts in.
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  workspaces:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Workspace'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+      operationId: getWorkspaces
+      x-operation-id-source: derived
+components:
+  schemas:
+    Account:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        platform:
+          type: string
+          example: instagram
+        platform_username:
+          type: string
+        platform_account_id:
+          type: string
+        is_connected:
+          type: boolean
+        requires_reauth:
+          type: boolean
+        profile_image_url:
+          type:
+          - string
+          - 'null'
+          format: uri
+        connected_at:
+          type: string
+          format: date-time
+    Workspace:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        name:
+          type: string
+        isPersonal:
+          type: boolean
+        role:
+          type: string
+          enum:
+          - owner
+          - admin
+          - manager
+          - member
+          - viewer
+        active:
+          type: boolean
+    Error:
+      type: object
+      properties:
+        error:
+          type: string
+      required:
+      - error
+    PinterestBoard:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        privacy:
+          type: string
+          enum:
+          - PUBLIC
+          - PROTECTED
+          - SECRET
+        pinCount:
+          type: integer
+          nullable: true
+  responses:
+    Forbidden:
+      description: Key lacks the required scope (or viewer-role key attempting a write)
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    Unauthorized:
+      description: Missing or invalid API key
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+  securitySchemes:
+    ApiKey:
+      type: http
+      scheme: bearer
+      description: 'A PosteAhora API key: `Authorization: Bearer pah_live_…` (or `pah_test_…`). Keys are created in the app under /api and carry scopes (ideas:read/write, posts:read/write, analytics:read, accounts:read, media:write). A missing scope returns 403.
+
+        '

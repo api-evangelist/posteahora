@@ -1,0 +1,179 @@
+openapi: 3.2.0
+info:
+  title: PosteAhora Public Ideas API
+  version: 1.0.0
+  description: 'Key-authenticated REST gateway over the same publishing pipeline as the PosteAhora web app. It powers the MCP server, the CLI, the n8n node, and any third-party integration. This is the frozen **v1** contract: additive changes only.
+
+
+    Human-readable docs: https://posteahora.com/docs/api'
+  contact:
+    name: PosteAhora
+    url: https://posteahora.com/docs/api
+servers:
+- url: https://api.posteahora.com/functions/v1/api
+  description: Production. The /functions/v1/ segment is part of the stable URL — do not strip it.
+security:
+- ApiKey: []
+tags:
+- name: Ideas
+paths:
+  /ideas:
+    get:
+      tags:
+      - Ideas
+      summary: List ideas (backlog), ordered by kanban column then position
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  ideas:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Idea'
+      operationId: getIdeas
+      x-operation-id-source: derived
+    post:
+      tags:
+      - Ideas
+      summary: Create an idea
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/IdeaInput'
+      responses:
+        '201':
+          description: Created
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  idea:
+                    $ref: '#/components/schemas/Idea'
+      operationId: postIdeas
+      x-operation-id-source: derived
+  /ideas/{id}:
+    parameters:
+    - $ref: '#/components/parameters/Id'
+    patch:
+      tags:
+      - Ideas
+      summary: Update an idea (only sent fields are touched)
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/IdeaInput'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  idea:
+                    $ref: '#/components/schemas/Idea'
+        '404':
+          $ref: '#/components/responses/NotFound'
+      operationId: patchIdeasById
+      x-operation-id-source: derived
+    delete:
+      tags:
+      - Ideas
+      summary: Delete an idea
+      responses:
+        '200':
+          $ref: '#/components/responses/Deleted'
+        '404':
+          $ref: '#/components/responses/NotFound'
+      operationId: deleteIdeasById
+      x-operation-id-source: derived
+components:
+  responses:
+    Deleted:
+      description: Deleted
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              id:
+                type: string
+              deleted:
+                type: boolean
+    NotFound:
+      description: Resource not found (or not in the key's workspace)
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+  schemas:
+    Error:
+      type: object
+      properties:
+        error:
+          type: string
+      required:
+      - error
+    Idea:
+      allOf:
+      - $ref: '#/components/schemas/IdeaInput'
+      - type: object
+        properties:
+          id:
+            type: string
+            format: uuid
+          position:
+            type: number
+    IdeaInput:
+      type: object
+      properties:
+        title:
+          type: string
+        caption:
+          type: string
+        tags:
+          type: array
+          items:
+            type: string
+        mediaUrls:
+          type: array
+          items:
+            type: string
+            format: uri
+        mediaType:
+          type: string
+          enum:
+          - image
+          - video
+        status:
+          type: string
+          enum:
+          - unassigned
+          - todo
+          - in_progress
+          - done
+          default: unassigned
+  parameters:
+    Id:
+      name: id
+      in: path
+      required: true
+      schema:
+        type: string
+        format: uuid
+  securitySchemes:
+    ApiKey:
+      type: http
+      scheme: bearer
+      description: 'A PosteAhora API key: `Authorization: Bearer pah_live_…` (or `pah_test_…`). Keys are created in the app under /api and carry scopes (ideas:read/write, posts:read/write, analytics:read, accounts:read, media:write). A missing scope returns 403.
+
+        '

@@ -1,0 +1,144 @@
+openapi: 3.2.0
+info:
+  title: PosteAhora Public Analytics API
+  version: 1.0.0
+  description: 'Key-authenticated REST gateway over the same publishing pipeline as the PosteAhora web app. It powers the MCP server, the CLI, the n8n node, and any third-party integration. This is the frozen **v1** contract: additive changes only.
+
+
+    Human-readable docs: https://posteahora.com/docs/api'
+  contact:
+    name: PosteAhora
+    url: https://posteahora.com/docs/api
+servers:
+- url: https://api.posteahora.com/functions/v1/api
+  description: Production. The /functions/v1/ segment is part of the stable URL — do not strip it.
+security:
+- ApiKey: []
+tags:
+- name: Analytics
+paths:
+  /analytics:
+    get:
+      tags:
+      - Analytics
+      summary: Read post analytics (refreshed hourly)
+      parameters:
+      - name: period
+        in: query
+        schema:
+          type: string
+          enum:
+          - 7d
+          - 30d
+          - 90d
+          - all
+          default: 30d
+      - name: platform
+        in: query
+        schema:
+          type: string
+      - name: limit
+        in: query
+        schema:
+          type: integer
+          default: 200
+          maximum: 500
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AnalyticsResult'
+      operationId: getAnalytics
+      x-operation-id-source: derived
+components:
+  schemas:
+    AnalyticsResult:
+      type: object
+      properties:
+        period:
+          type: string
+        summary:
+          type: object
+          properties:
+            totals:
+              type: object
+              additionalProperties:
+                type: number
+            byPlatform:
+              type: object
+              additionalProperties:
+                type: object
+                additionalProperties:
+                  type: number
+        posts:
+          type: array
+          items:
+            type: object
+            properties:
+              postId:
+                type: string
+              caption:
+                type:
+                - string
+                - 'null'
+              publishedAt:
+                type:
+                - string
+                - 'null'
+                format: date-time
+              platform:
+                type: string
+              views:
+                type:
+                - number
+                - 'null'
+              likes:
+                type:
+                - number
+                - 'null'
+              comments:
+                type:
+                - number
+                - 'null'
+              shares:
+                type:
+                - number
+                - 'null'
+              reach:
+                type:
+                - number
+                - 'null'
+              saves:
+                type:
+                - number
+                - 'null'
+              impressions:
+                type:
+                - number
+                - 'null'
+              reposts:
+                type:
+                - number
+                - 'null'
+              totalInteractions:
+                type:
+                - number
+                - 'null'
+              fetchedAt:
+                type:
+                - string
+                - 'null'
+                format: date-time
+              error:
+                type:
+                - string
+                - 'null'
+  securitySchemes:
+    ApiKey:
+      type: http
+      scheme: bearer
+      description: 'A PosteAhora API key: `Authorization: Bearer pah_live_…` (or `pah_test_…`). Keys are created in the app under /api and carry scopes (ideas:read/write, posts:read/write, analytics:read, accounts:read, media:write). A missing scope returns 403.
+
+        '

@@ -79,20 +79,109 @@ common:
   url: https://posteahora.com/changelog
 apis:
 - name: PosteAhora API
-  description: Key-authenticated REST gateway over the same publishing pipeline as the PosteAhora web app.
+  description: >-
+    Key-authenticated REST gateway over the same publishing pipeline as the PosteAhora web app.
   humanURL: https://posteahora.com/docs/api
   baseURL: https://api.posteahora.com/functions/v1/api
   aid: posteahora:posteahora-api
-- aid: posteahora:posteahora-public-api-api
-  name: PosteAhora Public API API
-  description: 'Key-authenticated REST gateway over the same publishing pipeline as the PosteAhora web app. It powers the MCP server, the CLI,
-
-    the n8n node, and any third-party integration. This is the frozen **v1** contract: additive changes only.'
+- aid: posteahora:posteahora-accounts-api
+  name: PosteAhora Accounts API
+  description: The Accounts API from PosteAhora — 3 operation(s) for accounts.
   humanURL: https://posteahora.com/docs/api
   baseURL: https://api.posteahora.com/functions/v1/api
+  tags:
+  - Accounts
   properties:
   - type: OpenAPI
-    url: openapi/_original/posteahora-api-openapi.yml
+    url: openapi/posteahora-accounts-api-openapi.yml
+  - type: JSONSchema
+    url: json-schema/posteahora-create-post-request-schema.json
+  - type: JSONSchema
+    url: json-schema/posteahora-analytics-result-schema.json
+  - type: JSONSchema
+    url: json-schema/posteahora-post-schema.json
+  - type: JSONSchema
+    url: json-schema/posteahora-update-post-request-schema.json
+  - type: JSONSchema
+    url: json-schema/posteahora-account-schema.json
+  - type: JSONSchema
+    url: json-schema/posteahora-idea-input-schema.json
+- aid: posteahora:posteahora-analytics-api
+  name: PosteAhora Analytics API
+  description: The Analytics API from PosteAhora — 1 operation(s) for analytics.
+  humanURL: https://posteahora.com/docs/api
+  baseURL: https://api.posteahora.com/functions/v1/api
+  tags:
+  - Analytics
+  properties:
+  - type: OpenAPI
+    url: openapi/posteahora-analytics-api-openapi.yml
+  - type: JSONSchema
+    url: json-schema/posteahora-create-post-request-schema.json
+  - type: JSONSchema
+    url: json-schema/posteahora-analytics-result-schema.json
+  - type: JSONSchema
+    url: json-schema/posteahora-post-schema.json
+  - type: JSONSchema
+    url: json-schema/posteahora-update-post-request-schema.json
+  - type: JSONSchema
+    url: json-schema/posteahora-account-schema.json
+  - type: JSONSchema
+    url: json-schema/posteahora-idea-input-schema.json
+- aid: posteahora:posteahora-ideas-api
+  name: PosteAhora Ideas API
+  description: The Ideas API from PosteAhora — 2 operation(s) for ideas.
+  humanURL: https://posteahora.com/docs/api
+  baseURL: https://api.posteahora.com/functions/v1/api
+  tags:
+  - Ideas
+  properties:
+  - type: OpenAPI
+    url: openapi/posteahora-ideas-api-openapi.yml
+  - type: JSONSchema
+    url: json-schema/posteahora-create-post-request-schema.json
+  - type: JSONSchema
+    url: json-schema/posteahora-analytics-result-schema.json
+  - type: JSONSchema
+    url: json-schema/posteahora-post-schema.json
+  - type: JSONSchema
+    url: json-schema/posteahora-update-post-request-schema.json
+  - type: JSONSchema
+    url: json-schema/posteahora-account-schema.json
+  - type: JSONSchema
+    url: json-schema/posteahora-idea-input-schema.json
+- aid: posteahora:posteahora-media-api
+  name: PosteAhora Media API
+  description: The Media API from PosteAhora — 1 operation(s) for media.
+  humanURL: https://posteahora.com/docs/api
+  baseURL: https://api.posteahora.com/functions/v1/api
+  tags:
+  - Media
+  properties:
+  - type: OpenAPI
+    url: openapi/posteahora-media-api-openapi.yml
+  - type: JSONSchema
+    url: json-schema/posteahora-create-post-request-schema.json
+  - type: JSONSchema
+    url: json-schema/posteahora-analytics-result-schema.json
+  - type: JSONSchema
+    url: json-schema/posteahora-post-schema.json
+  - type: JSONSchema
+    url: json-schema/posteahora-update-post-request-schema.json
+  - type: JSONSchema
+    url: json-schema/posteahora-account-schema.json
+  - type: JSONSchema
+    url: json-schema/posteahora-idea-input-schema.json
+- aid: posteahora:posteahora-posts-api
+  name: PosteAhora Posts API
+  description: The Posts API from PosteAhora — 3 operation(s) for posts.
+  humanURL: https://posteahora.com/docs/api
+  baseURL: https://api.posteahora.com/functions/v1/api
+  tags:
+  - Posts
+  properties:
+  - type: OpenAPI
+    url: openapi/posteahora-posts-api-openapi.yml
   - type: JSONSchema
     url: json-schema/posteahora-create-post-request-schema.json
   - type: JSONSchema

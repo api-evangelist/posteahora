@@ -1,0 +1,22 @@
+{
+  "provider": "posteahora",
+  "sources": [
+    "_original/posteahora-api-openapi.yml"
+  ],
+  "outputs": [
+    "posteahora-accounts-api-openapi.yml",
+    "posteahora-analytics-api-openapi.yml",
+    "posteahora-ideas-api-openapi.yml",
+    "posteahora-media-api-openapi.yml",
+    "posteahora-posts-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "posteahora-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "apis.yml register: written (+5 apis, 6 total)"
+  ],
+  "skipped": []
+}

@@ -1,0 +1,63 @@
+openapi: 3.2.0
+info:
+  title: PosteAhora Public Media API
+  version: 1.0.0
+  description: 'Key-authenticated REST gateway over the same publishing pipeline as the PosteAhora web app. It powers the MCP server, the CLI, the n8n node, and any third-party integration. This is the frozen **v1** contract: additive changes only.
+
+
+    Human-readable docs: https://posteahora.com/docs/api'
+  contact:
+    name: PosteAhora
+    url: https://posteahora.com/docs/api
+servers:
+- url: https://api.posteahora.com/functions/v1/api
+  description: Production. The /functions/v1/ segment is part of the stable URL — do not strip it.
+security:
+- ApiKey: []
+tags:
+- name: Media
+paths:
+  /media/upload-url:
+    post:
+      tags:
+      - Media
+      summary: Get a presigned URL to upload media, then PUT the file to it
+      description: Required for TikTok photos (must be served from cdn.posteahora.com). Works for any size.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                filename:
+                  type: string
+                contentType:
+                  type: string
+                sizeBytes:
+                  type: integer
+                prefix:
+                  type: string
+      responses:
+        '201':
+          description: Created
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  uploadUrl:
+                    type: string
+                    format: uri
+                  publicUrl:
+                    type: string
+                    format: uri
+      operationId: postMediaUploadUrl
+      x-operation-id-source: derived
+components:
+  securitySchemes:
+    ApiKey:
+      type: http
+      scheme: bearer
+      description: 'A PosteAhora API key: `Authorization: Bearer pah_live_…` (or `pah_test_…`). Keys are created in the app under /api and carry scopes (ideas:read/write, posts:read/write, analytics:read, accounts:read, media:write). A missing scope returns 403.
+
+        '
