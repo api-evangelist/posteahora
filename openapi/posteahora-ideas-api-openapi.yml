@@ -97,7 +97,21 @@ paths:
       operationId: deleteIdeasById
       x-operation-id-source: derived
 components:
+  parameters:
+    Id:
+      name: id
+      in: path
+      required: true
+      schema:
+        type: string
+        format: uuid
   responses:
+    NotFound:
+      description: Resource not found (or not in the key's workspace)
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
     Deleted:
       description: Deleted
       content:
@@ -109,30 +123,7 @@ components:
                 type: string
               deleted:
                 type: boolean
-    NotFound:
-      description: Resource not found (or not in the key's workspace)
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Error'
   schemas:
-    Error:
-      type: object
-      properties:
-        error:
-          type: string
-      required:
-      - error
-    Idea:
-      allOf:
-      - $ref: '#/components/schemas/IdeaInput'
-      - type: object
-        properties:
-          id:
-            type: string
-            format: uuid
-          position:
-            type: number
     IdeaInput:
       type: object
       properties:
@@ -162,14 +153,23 @@ components:
           - in_progress
           - done
           default: unassigned
-  parameters:
-    Id:
-      name: id
-      in: path
-      required: true
-      schema:
-        type: string
-        format: uuid
+    Idea:
+      allOf:
+      - $ref: '#/components/schemas/IdeaInput'
+      - type: object
+        properties:
+          id:
+            type: string
+            format: uuid
+          position:
+            type: number
+    Error:
+      type: object
+      properties:
+        error:
+          type: string
+      required:
+      - error
   securitySchemes:
     ApiKey:
       type: http

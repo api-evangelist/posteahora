@@ -16,7 +16,13 @@
   "notes": [
     "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
     "posteahora-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
-    "apis.yml register: written (+5 apis, 6 total)"
+    "apis.yml register: already-registered"
   ],
-  "skipped": []
+  "skipped": [
+    "posteahora-accounts-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "posteahora-analytics-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "posteahora-ideas-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "posteahora-media-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "posteahora-posts-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }

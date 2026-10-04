@@ -103,32 +103,36 @@ paths:
       operationId: getWorkspaces
       x-operation-id-source: derived
 components:
+  responses:
+    Forbidden:
+      description: Key lacks the required scope (or viewer-role key attempting a write)
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    Unauthorized:
+      description: Missing or invalid API key
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
   schemas:
-    Account:
+    PinterestBoard:
       type: object
       properties:
         id:
           type: string
-          format: uuid
-        platform:
+        name:
           type: string
-          example: instagram
-        platform_username:
+        privacy:
           type: string
-        platform_account_id:
-          type: string
-        is_connected:
-          type: boolean
-        requires_reauth:
-          type: boolean
-        profile_image_url:
-          type:
-          - string
-          - 'null'
-          format: uri
-        connected_at:
-          type: string
-          format: date-time
+          enum:
+          - PUBLIC
+          - PROTECTED
+          - SECRET
+        pinCount:
+          type: integer
+          nullable: true
     Workspace:
       type: object
       properties:
@@ -156,35 +160,31 @@ components:
           type: string
       required:
       - error
-    PinterestBoard:
+    Account:
       type: object
       properties:
         id:
           type: string
-        name:
+          format: uuid
+        platform:
           type: string
-        privacy:
+          example: instagram
+        platform_username:
           type: string
-          enum:
-          - PUBLIC
-          - PROTECTED
-          - SECRET
-        pinCount:
-          type: integer
-          nullable: true
-  responses:
-    Forbidden:
-      description: Key lacks the required scope (or viewer-role key attempting a write)
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Error'
-    Unauthorized:
-      description: Missing or invalid API key
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Error'
+        platform_account_id:
+          type: string
+        is_connected:
+          type: boolean
+        requires_reauth:
+          type: boolean
+        profile_image_url:
+          type:
+          - string
+          - 'null'
+          format: uri
+        connected_at:
+          type: string
+          format: date-time
   securitySchemes:
     ApiKey:
       type: http
