@@ -18,6 +18,12 @@ tags:
 - Social Media
 - AI Automation
 - Marketing
+- Software-as-a-Service
+tags_raw:
+- Company
+- Social Media
+- AI Automation
+- Marketing
 - SaaS
 maintainers:
 - FN: Kin Lane
@@ -25,6 +31,9 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: CapabilityMap
+  url: capabilities/posteahora-capability-edges.yml
+  name: PosteAhora Business Capability Map
 - type: Spectral
   url: rules/posteahora-rules.yml
 - type: JSONLD
@@ -90,6 +99,8 @@ apis:
   humanURL: https://posteahora.com/docs/api
   baseURL: https://api.posteahora.com/functions/v1/api
   tags:
+  - Account
+  tags_raw:
   - Accounts
   properties:
   - type: OpenAPI
