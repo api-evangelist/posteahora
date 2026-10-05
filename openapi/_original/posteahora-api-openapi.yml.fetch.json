@@ -1,0 +1,12 @@
+{
+ "url": "https://posteahora.com/openapi.yaml",
+ "requested_url": "https://posteahora.com/openapi.yaml",
+ "status": 200,
+ "content_type": "text/yaml; charset=utf-8",
+ "bytes": 25412,
+ "sha256": "552a8eb6c30f90ec3cf3366525fea0c270b5648be11f8c0065310f38a8ffd4e1",
+ "fetched_at": "2026-10-04",
+ "fetched_by": "APIEvangelist-Harvest/1.0 (+https://apievangelist.com)",
+ "match": "byte-identical",
+ "note": "Re-fetched from the provider by verify-openapi-sources.py; the archived file is byte-identical to what the provider serves."
+}
