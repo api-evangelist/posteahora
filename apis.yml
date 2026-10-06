@@ -12,7 +12,7 @@ x-tier: profiled
 x-tier-reason: enrichment pass 2026-09-27 (modular-v1; was harvest)
 specificationVersion: '0.20'
 created: '2026-09-27'
-modified: '2026-09-27'
+modified: '2026-10-06'
 tags:
 - Company
 - Social Media
@@ -31,6 +31,8 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- url: https://posteahora.com/blog/rss.xml
+  type: BlogRSS
 - type: CapabilityMap
   url: capabilities/posteahora-capability-edges.yml
   name: PosteAhora Business Capability Map
