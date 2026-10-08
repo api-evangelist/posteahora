@@ -27,3 +27,34 @@ plans:
   price: 89
   billing_period: monthly
 docs: https://posteahora.com/pricing
+x-canonical:
+  generated: '2026-10-08'
+  vocabulary: all/0-working/economics/plans-canonical.yml
+  models:
+  - subscription
+  units: []
+  plans:
+  - name: Standard
+    access: other
+    model: subscription
+    model_how: derived
+    units: []
+    periods: []
+  - name: Team
+    access: other
+    model: subscription
+    model_how: derived
+    units: []
+    periods: []
+  - name: Scale
+    access: other
+    model: subscription
+    model_how: derived
+    units: []
+    periods: []
+  - name: Agency
+    access: other
+    model: subscription
+    model_how: derived
+    units: []
+    periods: []
