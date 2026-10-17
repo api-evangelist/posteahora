@@ -117,6 +117,38 @@ components:
           schema:
             $ref: '#/components/schemas/Error'
   schemas:
+    Error:
+      type: object
+      properties:
+        error:
+          type: string
+      required:
+      - error
+    Account:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        platform:
+          type: string
+          example: instagram
+        platform_username:
+          type: string
+        platform_account_id:
+          type: string
+        is_connected:
+          type: boolean
+        requires_reauth:
+          type: boolean
+        profile_image_url:
+          type:
+          - string
+          - 'null'
+          format: uri
+        connected_at:
+          type: string
+          format: date-time
     PinterestBoard:
       type: object
       properties:
@@ -153,38 +185,6 @@ components:
           - viewer
         active:
           type: boolean
-    Error:
-      type: object
-      properties:
-        error:
-          type: string
-      required:
-      - error
-    Account:
-      type: object
-      properties:
-        id:
-          type: string
-          format: uuid
-        platform:
-          type: string
-          example: instagram
-        platform_username:
-          type: string
-        platform_account_id:
-          type: string
-        is_connected:
-          type: boolean
-        requires_reauth:
-          type: boolean
-        profile_image_url:
-          type:
-          - string
-          - 'null'
-          format: uri
-        connected_at:
-          type: string
-          format: date-time
   securitySchemes:
     ApiKey:
       type: http

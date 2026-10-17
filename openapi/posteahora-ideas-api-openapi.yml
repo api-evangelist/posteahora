@@ -97,33 +97,24 @@ paths:
       operationId: deleteIdeasById
       x-operation-id-source: derived
 components:
-  parameters:
-    Id:
-      name: id
-      in: path
-      required: true
-      schema:
-        type: string
-        format: uuid
-  responses:
-    NotFound:
-      description: Resource not found (or not in the key's workspace)
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Error'
-    Deleted:
-      description: Deleted
-      content:
-        application/json:
-          schema:
-            type: object
-            properties:
-              id:
-                type: string
-              deleted:
-                type: boolean
   schemas:
+    Idea:
+      allOf:
+      - $ref: '#/components/schemas/IdeaInput'
+      - type: object
+        properties:
+          id:
+            type: string
+            format: uuid
+          position:
+            type: number
+    Error:
+      type: object
+      properties:
+        error:
+          type: string
+      required:
+      - error
     IdeaInput:
       type: object
       properties:
@@ -153,23 +144,32 @@ components:
           - in_progress
           - done
           default: unassigned
-    Idea:
-      allOf:
-      - $ref: '#/components/schemas/IdeaInput'
-      - type: object
-        properties:
-          id:
-            type: string
-            format: uuid
-          position:
-            type: number
-    Error:
-      type: object
-      properties:
-        error:
-          type: string
-      required:
-      - error
+  parameters:
+    Id:
+      name: id
+      in: path
+      required: true
+      schema:
+        type: string
+        format: uuid
+  responses:
+    NotFound:
+      description: Resource not found (or not in the key's workspace)
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    Deleted:
+      description: Deleted
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              id:
+                type: string
+              deleted:
+                type: boolean
   securitySchemes:
     ApiKey:
       type: http
